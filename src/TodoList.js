@@ -17,20 +17,18 @@ const TodoList = (props) => {
                 bordered
                 dataSource={list}
                 renderItem={(item, index) => (
-                    <List.Item onClick={() => {handleDelete(index)}} key={index}>
-                        {index}: {item}
+                    <List.Item onClick={() => {handleDelete(index)}} key={item}>
+                        {index}. {item}
                     </List.Item>
                 )}
             />  
         </div> );
     }
 
-const mapStateToProps = (state) => {
-    return {
+const mapStateToProps = (state) => ({
         inputValue: state.inputValue,
         list: state.list
-    }
-}
+})
 
 const mapDispatchToProps = (dispatch) => {
     return {

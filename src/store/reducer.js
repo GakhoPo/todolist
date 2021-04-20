@@ -11,6 +11,7 @@ const reduer = (state = defaultState, action) => {
     }
 
     if(action.type === 'add_item') {
+        if(!state.inputValue) return state;
         const newState = JSON.parse(JSON.stringify(state));
         newState.list.push(newState.inputValue);
         newState.inputValue = '';
